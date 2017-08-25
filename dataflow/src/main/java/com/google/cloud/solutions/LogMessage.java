@@ -1,4 +1,4 @@
-/**
+/*
 Copyright Google Inc. 2015
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -15,9 +15,9 @@ limitations under the License.
 
 package com.google.cloud.solutions;
 
-import com.google.cloud.dataflow.sdk.coders.AvroCoder;
-import com.google.cloud.dataflow.sdk.coders.DefaultCoder;
 import org.apache.avro.reflect.Nullable;
+import org.apache.beam.sdk.coders.AvroCoder;
+import org.apache.beam.sdk.coders.DefaultCoder;
 import org.joda.time.Instant;
 
 @DefaultCoder(AvroCoder.class)
@@ -32,8 +32,8 @@ class LogMessage {
     @SuppressWarnings("unused")
     public LogMessage() {}
 
-    public LogMessage(Instant timestamp, int httpStatusCode, double responseTime,
-                      String source, String httpMethod, String destination) {
+    LogMessage(Instant timestamp, int httpStatusCode, double responseTime,
+               String source, String httpMethod, String destination) {
         this.timestamp = timestamp;
         this.httpStatusCode = httpStatusCode;
         this.responseTime = responseTime;
@@ -42,27 +42,27 @@ class LogMessage {
         this.destination = destination;
     }
 
-    public Instant getTimestamp() {
+    Instant getTimestamp() {
         return this.timestamp;
     }
 
-    public int getHttpStatusCode() {
+    int getHttpStatusCode() {
         return this.httpStatusCode;
     }
 
-    public double getResponseTime() {
+    double getResponseTime() {
         return this.responseTime;
     }
 
-    public String getSource() {
+    String getSource() {
         return this.source;
     }
 
-    public String getHttpMethod() {
+    String getHttpMethod() {
         return this.httpMethod;
     }
 
-    public String getDestination() {
+    String getDestination() {
         return this.destination;
     }
 }

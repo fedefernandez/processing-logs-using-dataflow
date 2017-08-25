@@ -1,4 +1,4 @@
-/**
+/*
 Copyright Google Inc. 2015
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -15,12 +15,12 @@ limitations under the License.
 
 package com.google.cloud.solutions;
 
-import com.google.cloud.dataflow.sdk.options.DataflowPipelineOptions;
-import com.google.cloud.dataflow.sdk.options.Default;
-import com.google.cloud.dataflow.sdk.options.Description;
+import org.apache.beam.sdk.options.Default;
+import org.apache.beam.sdk.options.Description;
+import org.apache.beam.sdk.options.PipelineOptions;
 
 @SuppressWarnings("unused")
-public interface LogAnalyticsPipelineOptions extends DataflowPipelineOptions {
+public interface LogAnalyticsPipelineOptions extends PipelineOptions {
     @Description("Location of /home logs, Cloud Storage path or Cloud Pub/Sub subscription")
     String getHomeLogSource();
     void setHomeLogSource(String homeLogSource);
